@@ -42,3 +42,13 @@ export interface AddressInput {
   postalCode: string;
   isDefault?: boolean;
 }
+export type Banners = {
+  _id: string;
+  name: string;
+  title: string;
+  startFrom: number;
+  image: string;
+  bannerType: string;
+  createdAt: string;
+  updatedAt: string;
+};

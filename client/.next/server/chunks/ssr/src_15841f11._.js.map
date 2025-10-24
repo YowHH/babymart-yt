@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["file:///Users/noormohammad/Documents/GitHub/new_app/babymart-yt/client/src/components/common/pages/NotFoundPageClient.tsx"],"sourcesContent":["import React from \"react\";\n\nconst NotFoundPageClient = () => {\n  return <div>NotFoundPageClient</div>;\n};\n\nexport default NotFoundPageClient;\n"],"names":[],"mappings":";;;;;AAEA,MAAM,qBAAqB;IACzB,qBAAO,8OAAC;kBAAI;;;;;;AACd;uCAEe","debugId":null}},
+    {"offset": {"line": 24, "column": 0}, "map": {"version":3,"sources":["file:///Users/noormohammad/Documents/GitHub/new_app/babymart-yt/client/src/app/not-found.tsx"],"sourcesContent":["import NotFoundPageClient from \"@/components/common/pages/NotFoundPageClient\";\nimport React from \"react\";\n\nconst NotFoundPage = () => {\n  return <NotFoundPageClient />;\n};\n\nexport default NotFoundPage;\n"],"names":[],"mappings":";;;;AAAA;;;AAGA,MAAM,eAAe;IACnB,qBAAO,8OAAC,2JAAA,CAAA,UAAkB;;;;;AAC5B;uCAEe","debugId":null}}]
+}

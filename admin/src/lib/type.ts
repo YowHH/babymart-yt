@@ -36,7 +36,7 @@ export type Product = {
   createdAt: string;
 };
 
-export type Banner = {
+export type BannerType = {
   _id: string;
   name: string;
   title: string;
