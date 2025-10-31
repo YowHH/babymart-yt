@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":["file:///Users/noor_mohammad/Documents/GitHub/babymart-yt/client/src/app/%28user%29/user/profile/page.tsx"],"sourcesContent":["import React from \"react\";\n\nconst UserProfile = () => {\n  return <div>profile page</div>;\n};\n\nexport default UserProfile;\n"],"names":[],"mappings":";;;;;AAEA,MAAM,cAAc;IAClB,qBAAO,8OAAC;kBAAI;;;;;;AACd;uCAEe","debugId":null}}]
+}

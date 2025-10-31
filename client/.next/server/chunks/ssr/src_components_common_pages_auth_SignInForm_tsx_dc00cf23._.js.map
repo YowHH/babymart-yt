@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["file:///Users/noor_mohammad/Documents/GitHub/babymart-yt/client/src/components/common/pages/auth/SignInForm.tsx"],"sourcesContent":["\"use client\";\nimport { z } from \"zod\";\n\n// Define the schema for the login form\nconst loginSchema = z.object({\n  email: z.string().email(\"Invalid email address\"),\n  password: z.string().min(6, \"Password must be at least 6 characters\"),\n  termsAccepted: z.literal(true, {\n    errorMap: () => ({\n      message: \"You must accept the terms and privacy policy\",\n    }),\n  }),\n});\n\ntype LoginFormData = z.infer<typeof loginSchema>;\n\nconst SignInForm = () => {\n  return <div>Signin</div>;\n};\n\nexport default SignInForm;\n"],"names":[],"mappings":";;;;AACA;AADA;;;AAGA,uCAAuC;AACvC,MAAM,cAAc,6KAAA,CAAA,IAAC,CAAC,MAAM,CAAC;IAC3B,OAAO,6KAAA,CAAA,IAAC,CAAC,MAAM,GAAG,KAAK,CAAC;IACxB,UAAU,6KAAA,CAAA,IAAC,CAAC,MAAM,GAAG,GAAG,CAAC,GAAG;IAC5B,eAAe,6KAAA,CAAA,IAAC,CAAC,OAAO,CAAC,MAAM;QAC7B,UAAU,IAAM,CAAC;gBACf,SAAS;YACX,CAAC;IACH;AACF;AAIA,MAAM,aAAa;IACjB,qBAAO,8OAAC;kBAAI;;;;;;AACd;uCAEe","debugId":null}}]
+}

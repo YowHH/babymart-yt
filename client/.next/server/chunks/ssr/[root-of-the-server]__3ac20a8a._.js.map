@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":["file:///Users/noor_mohammad/Documents/GitHub/babymart-yt/client/src/app/auth/signin/page.tsx"],"sourcesContent":["import React from \"react\";\n\nconst SignInPage = () => {\n  return (\n    <div className=\"p-5 md:p-10\">\n      <div className=\"max-w-4xl mx-auto bg-babyshopWhite p-5 md:p-10 flex flex-col items-center rounded-md border shadow\">\n        <div className=\"text-center\">\n          <h3 className=\"text-3xl font-semibold mb-1\">Sign In</h3>\n          <p>\n            Login to access{\" \"}\n            <span className=\"text-babyshopSky font-medium\">Babymart</span>\n          </p>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default SignInPage;\n"],"names":[],"mappings":";;;;;AAEA,MAAM,aAAa;IACjB,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC;YAAI,WAAU;sBACb,cAAA,8OAAC;gBAAI,WAAU;;kCACb,8OAAC;wBAAG,WAAU;kCAA8B;;;;;;kCAC5C,8OAAC;;4BAAE;4BACe;0CAChB,8OAAC;gCAAK,WAAU;0CAA+B;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAM3D;uCAEe","debugId":null}}]
+}

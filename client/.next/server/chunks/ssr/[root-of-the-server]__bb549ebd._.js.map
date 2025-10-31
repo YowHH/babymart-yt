@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":["file:///Users/noor_mohammad/Documents/GitHub/babymart-yt/client/src/app/auth/signup/page.tsx"],"sourcesContent":["import React from \"react\";\n\nconst SignUpPage = () => {\n  return <div></div>;\n};\n\nexport default SignUpPage;\n"],"names":[],"mappings":";;;;;AAEA,MAAM,aAAa;IACjB,qBAAO,8OAAC;;;;;AACV;uCAEe","debugId":null}}]
+}
