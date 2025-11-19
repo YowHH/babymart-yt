@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":["file:///Users/noor_mohammad/Documents/GitHub/babymart-yt/client/src/app/shop/page.tsx"],"sourcesContent":["import React from \"react\";\n\nconst ShopPage = () => {\n  return (\n    <div>\n      <p>Shop page</p>\n    </div>\n  );\n};\n\nexport default ShopPage;\n"],"names":[],"mappings":";;;;;AAEA,MAAM,WAAW;IACf,qBACE,8OAAC;kBACC,cAAA,8OAAC;sBAAE;;;;;;;;;;;AAGT;uCAEe","debugId":null}}]
+}

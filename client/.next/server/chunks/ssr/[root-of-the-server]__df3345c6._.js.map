@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 26, "column": 0}, "map": {"version":3,"sources":["file:///Users/noor_mohammad/Documents/GitHub/babymart-yt/client/src/components/pages/CartPageClient.tsx"],"sourcesContent":["import React from \"react\";\n\nconst CartPageClient = () => {\n  return <div>CartPageClient</div>;\n};\n\nexport default CartPageClient;\n"],"names":[],"mappings":";;;;;AAEA,MAAM,iBAAiB;IACrB,qBAAO,8OAAC;kBAAI;;;;;;AACd;uCAEe","debugId":null}},
+    {"offset": {"line": 45, "column": 0}, "map": {"version":3,"sources":["file:///Users/noor_mohammad/Documents/GitHub/babymart-yt/client/src/app/user/cart/page.tsx"],"sourcesContent":["import CartPageClient from \"@/components/pages/CartPageClient\";\nimport React from \"react\";\n\nconst CartPage = () => {\n  return <CartPageClient />;\n};\n\nexport default CartPage;\n"],"names":[],"mappings":";;;;AAAA;;;AAGA,MAAM,WAAW;IACf,qBAAO,8OAAC,6IAAA,CAAA,UAAc;;;;;AACxB;uCAEe","debugId":null}}]
+}

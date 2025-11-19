@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["file:///Users/noor_mohammad/Documents/GitHub/babymart-yt/client/src/components/common/Container.tsx"],"sourcesContent":["import { cn } from \"@/lib/utils\";\nimport React from \"react\";\n\ninterface Props {\n  children: React.ReactNode;\n  className?: string;\n}\n\nconst Container = ({ children, className }: Props) => {\n  return (\n    <div className={cn(\"max-w-screen-2xl mx-auto px-4\", className)}>\n      {children}\n    </div>\n  );\n};\n\nexport default Container;\n"],"names":[],"mappings":";;;;AAAA;;;AAQA,MAAM,YAAY,CAAC,EAAE,QAAQ,EAAE,SAAS,EAAS;IAC/C,qBACE,8OAAC;QAAI,WAAW,CAAA,GAAA,mHAAA,CAAA,KAAE,AAAD,EAAE,iCAAiC;kBACjD;;;;;;AAGP;uCAEe","debugId":null}}]
+}

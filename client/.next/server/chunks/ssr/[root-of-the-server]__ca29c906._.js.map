@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 26, "column": 0}, "map": {"version":3,"sources":["file:///Users/noor_mohammad/Documents/GitHub/babymart-yt/client/src/components/pages/CheckoutPageClient.tsx"],"sourcesContent":["import React from \"react\";\n\nconst CheckoutPageClient = () => {\n  return <div>CheckoutPage client</div>;\n};\n\nexport default CheckoutPageClient;\n"],"names":[],"mappings":";;;;;AAEA,MAAM,qBAAqB;IACzB,qBAAO,8OAAC;kBAAI;;;;;;AACd;uCAEe","debugId":null}},
+    {"offset": {"line": 45, "column": 0}, "map": {"version":3,"sources":["file:///Users/noor_mohammad/Documents/GitHub/babymart-yt/client/src/app/user/checkout/page.tsx"],"sourcesContent":["import CheckoutPageClient from \"@/components/pages/CheckoutPageClient\";\nimport React from \"react\";\n\nconst CheckoutPage = () => {\n  return <CheckoutPageClient />;\n};\n\nexport default CheckoutPage;\n"],"names":[],"mappings":";;;;AAAA;;;AAGA,MAAM,eAAe;IACnB,qBAAO,8OAAC,iJAAA,CAAA,UAAkB;;;;;AAC5B;uCAEe","debugId":null}}]
+}
