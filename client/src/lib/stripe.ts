@@ -10,7 +10,7 @@ export const stripePromise = loadStripe(stripePublishableKey);
 
 export interface StripeCheckoutItem {
   name: string;
-  description?: string;
+  description: string;
   amount: number; // in cents
   currency: string;
   quantity: number;
