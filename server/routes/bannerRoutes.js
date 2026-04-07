@@ -1,42 +1,33 @@
 import express from "express";
 import {
-  getUsers,
-  getUserById,
-  createUser,
-  updateUser,
-  deleteUser,
-  addAddress,
-  updateAddress,
-  deleteAddress,
-} from "../controllers/userController.js";
+  getBanners,
+  getBannerById,
+  createBanner,
+  updateBanner,
+  deleteBanner,
+} from "../controllers/bannerController.js";
 import { protect, admin } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
 /**
  * @swagger
- * /api/users:
+ * /api/banners:
  *   get:
- *     summary: Get all users (Admin only)
- *     tags: [Users]
- *     security:
- *       - bearerAuth: []
+ *     summary: Get all banners
+ *     tags: [Banners]
  *     responses:
  *       200:
- *         description: Users retrieved successfully
+ *         description: Banners retrieved successfully
  *         content:
  *           application/json:
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/User'
- *       401:
- *         description: Unauthorized
- *       403:
- *         description: Admin access required
+ *                 $ref: '#/components/schemas/Banner'
  *   post:
- *     summary: Create new user (Admin only)
- *     tags: [Users]
+ *     summary: Create new banner (Admin only)
+ *     tags: [Banners]
  *     security:
  *       - bearerAuth: []
  *     requestBody:
@@ -46,47 +37,44 @@ const router = express.Router();
  *           schema:
  *             type: object
  *             required:
- *               - name
- *               - email
- *               - password
+ *               - title
+ *               - image
  *             properties:
- *               name:
+ *               title:
  *                 type: string
- *               email:
+ *               subtitle:
  *                 type: string
- *                 format: email
- *               password:
+ *               image:
  *                 type: string
- *                 minLength: 6
- *               role:
+ *               buttonText:
  *                 type: string
- *                 enum: [user, admin]
- *                 default: user
+ *               buttonLink:
+ *                 type: string
+ *               isActive:
+ *                 type: boolean
+ *                 default: true
  *     responses:
  *       201:
- *         description: User created successfully
+ *         description: Banner created successfully
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/Banner'
  *       400:
- *         description: User already exists or validation error
+ *         description: Validation error
  *       401:
  *         description: Unauthorized
  *       403:
  *         description: Admin access required
  */
-router
-  .route("/")
-  .get(protect, admin, getUsers)
-  .post(protect, admin, createUser);
+router.route("/").get(getBanners).post(protect, admin, createBanner);
 
 /**
  * @swagger
- * /api/users/{id}:
+ * /api/banners/{id}:
  *   get:
- *     summary: Get user by ID
- *     tags: [Users]
+ *     summary: Get banner by ID
+ *     tags: [Banners]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -95,21 +83,21 @@ router
  *         required: true
  *         schema:
  *           type: string
- *         description: User ID
+ *         description: Banner ID
  *     responses:
  *       200:
- *         description: User retrieved successfully
+ *         description: Banner retrieved successfully
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/Banner'
  *       401:
  *         description: Unauthorized
  *       404:
- *         description: User not found
+ *         description: Banner not found
  *   put:
- *     summary: Update user
- *     tags: [Users]
+ *     summary: Update banner (Admin only)
+ *     tags: [Banners]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -118,7 +106,7 @@ router
  *         required: true
  *         schema:
  *           type: string
- *         description: User ID
+ *         description: Banner ID
  *     requestBody:
  *       required: true
  *       content:
@@ -126,30 +114,36 @@ router
  *           schema:
  *             type: object
  *             properties:
- *               name:
+ *               title:
  *                 type: string
- *               email:
+ *               subtitle:
  *                 type: string
- *                 format: email
- *               role:
+ *               image:
  *                 type: string
- *                 enum: [user, admin]
+ *               buttonText:
+ *                 type: string
+ *               buttonLink:
+ *                 type: string
+ *               isActive:
+ *                 type: boolean
  *     responses:
  *       200:
- *         description: User updated successfully
+ *         description: Banner updated successfully
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/Banner'
  *       400:
  *         description: Validation error
  *       401:
  *         description: Unauthorized
+ *       403:
+ *         description: Admin access required
  *       404:
- *         description: User not found
+ *         description: Banner not found
  *   delete:
- *     summary: Delete user (Admin only)
- *     tags: [Users]
+ *     summary: Delete banner (Admin only)
+ *     tags: [Banners]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -158,28 +152,21 @@ router
  *         required: true
  *         schema:
  *           type: string
- *         description: User ID
+ *         description: Banner ID
  *     responses:
  *       200:
- *         description: User deleted successfully
+ *         description: Banner deleted successfully
  *       401:
  *         description: Unauthorized
  *       403:
  *         description: Admin access required
  *       404:
- *         description: User not found
+ *         description: Banner not found
  */
 router
   .route("/:id")
-  .get(protect, getUserById)
-  .put(protect, updateUser) // Removed admin middleware for self-updates
-  .delete(protect, admin, deleteUser);
-
-// Address routes
-router.route("/:id/addresses").post(protect, addAddress);
-router
-  .route("/:id/addresses/:addressId")
-  .put(protect, updateAddress)
-  .delete(protect, deleteAddress);
+  .get(protect, getBannerById)
+  .put(protect, admin, updateBanner)
+  .delete(protect, admin, deleteBanner);
 
 export default router;

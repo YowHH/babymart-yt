@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const productSchema = new mongoose.Schema(
+const productSchema = mongoose.Schema(
   {
     name: {
       type: String,
@@ -20,7 +20,7 @@ const productSchema = new mongoose.Schema(
       type: Number,
       default: 0,
       min: 0,
-      max: 90,
+      max: 100,
     },
     stock: {
       type: Number,

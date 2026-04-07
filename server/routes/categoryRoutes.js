@@ -1,42 +1,33 @@
 import express from "express";
 import {
-  getUsers,
-  getUserById,
-  createUser,
-  updateUser,
-  deleteUser,
-  addAddress,
-  updateAddress,
-  deleteAddress,
-} from "../controllers/userController.js";
+  getCategories,
+  getCategoryById,
+  createCategory,
+  updateCategory,
+  deleteCategory,
+} from "../controllers/categoryController.js";
 import { protect, admin } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
 /**
  * @swagger
- * /api/users:
+ * /api/categories:
  *   get:
- *     summary: Get all users (Admin only)
- *     tags: [Users]
- *     security:
- *       - bearerAuth: []
+ *     summary: Get all categories
+ *     tags: [Categories]
  *     responses:
  *       200:
- *         description: Users retrieved successfully
+ *         description: Categories retrieved successfully
  *         content:
  *           application/json:
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/User'
- *       401:
- *         description: Unauthorized
- *       403:
- *         description: Admin access required
+ *                 $ref: '#/components/schemas/Category'
  *   post:
- *     summary: Create new user (Admin only)
- *     tags: [Users]
+ *     summary: Create new category (Admin only)
+ *     tags: [Categories]
  *     security:
  *       - bearerAuth: []
  *     requestBody:
@@ -47,46 +38,35 @@ const router = express.Router();
  *             type: object
  *             required:
  *               - name
- *               - email
- *               - password
  *             properties:
  *               name:
  *                 type: string
- *               email:
+ *               description:
  *                 type: string
- *                 format: email
- *               password:
+ *               image:
  *                 type: string
- *                 minLength: 6
- *               role:
- *                 type: string
- *                 enum: [user, admin]
- *                 default: user
  *     responses:
  *       201:
- *         description: User created successfully
+ *         description: Category created successfully
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/Category'
  *       400:
- *         description: User already exists or validation error
+ *         description: Validation error
  *       401:
  *         description: Unauthorized
  *       403:
  *         description: Admin access required
  */
-router
-  .route("/")
-  .get(protect, admin, getUsers)
-  .post(protect, admin, createUser);
+router.route("/").get(getCategories).post(protect, admin, createCategory);
 
 /**
  * @swagger
- * /api/users/{id}:
+ * /api/categories/{id}:
  *   get:
- *     summary: Get user by ID
- *     tags: [Users]
+ *     summary: Get category by ID
+ *     tags: [Categories]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -95,21 +75,21 @@ router
  *         required: true
  *         schema:
  *           type: string
- *         description: User ID
+ *         description: Category ID
  *     responses:
  *       200:
- *         description: User retrieved successfully
+ *         description: Category retrieved successfully
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/Category'
  *       401:
  *         description: Unauthorized
  *       404:
- *         description: User not found
+ *         description: Category not found
  *   put:
- *     summary: Update user
- *     tags: [Users]
+ *     summary: Update category (Admin only)
+ *     tags: [Categories]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -118,7 +98,7 @@ router
  *         required: true
  *         schema:
  *           type: string
- *         description: User ID
+ *         description: Category ID
  *     requestBody:
  *       required: true
  *       content:
@@ -128,28 +108,28 @@ router
  *             properties:
  *               name:
  *                 type: string
- *               email:
+ *               description:
  *                 type: string
- *                 format: email
- *               role:
+ *               image:
  *                 type: string
- *                 enum: [user, admin]
  *     responses:
  *       200:
- *         description: User updated successfully
+ *         description: Category updated successfully
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/Category'
  *       400:
  *         description: Validation error
  *       401:
  *         description: Unauthorized
+ *       403:
+ *         description: Admin access required
  *       404:
- *         description: User not found
+ *         description: Category not found
  *   delete:
- *     summary: Delete user (Admin only)
- *     tags: [Users]
+ *     summary: Delete category (Admin only)
+ *     tags: [Categories]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -158,28 +138,21 @@ router
  *         required: true
  *         schema:
  *           type: string
- *         description: User ID
+ *         description: Category ID
  *     responses:
  *       200:
- *         description: User deleted successfully
+ *         description: Category deleted successfully
  *       401:
  *         description: Unauthorized
  *       403:
  *         description: Admin access required
  *       404:
- *         description: User not found
+ *         description: Category not found
  */
 router
   .route("/:id")
-  .get(protect, getUserById)
-  .put(protect, updateUser) // Removed admin middleware for self-updates
-  .delete(protect, admin, deleteUser);
-
-// Address routes
-router.route("/:id/addresses").post(protect, addAddress);
-router
-  .route("/:id/addresses/:addressId")
-  .put(protect, updateAddress)
-  .delete(protect, deleteAddress);
+  .get(protect, getCategoryById)
+  .put(protect, admin, updateCategory)
+  .delete(protect, admin, deleteCategory);
 
 export default router;
