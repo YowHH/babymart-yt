@@ -112,9 +112,7 @@ const createProduct = asyncHandler(async (req, res) => {
   }
 
   // Upload image to Cloudinary
-  const result = await cloudinary.uploader.upload(image, {
-    folder: "admin-dashboard/products",
-  });
+
 
   const product = await Product.create({
     name,
@@ -124,7 +122,7 @@ const createProduct = asyncHandler(async (req, res) => {
     brand,
     discountPercentage: discountPercentage || 0,
     stock: stock || 0,
-    image: result.secure_url,
+    image: "",
   });
 
   if (product) {
